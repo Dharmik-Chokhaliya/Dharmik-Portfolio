@@ -1587,6 +1587,10 @@ button:hover {
     font-size: 1.6rem;
     margin-bottom: 1rem;
   }
+
+  .content.left {
+    margin-left: 20px;
+  }
 }
 
 /* ===== MODERN PROJECTS PAGE ===== */
@@ -1948,3 +1952,8 @@ button:hover {
     font-size: 1.6rem;
   }
 }
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin: 2rem 0;
+  }
