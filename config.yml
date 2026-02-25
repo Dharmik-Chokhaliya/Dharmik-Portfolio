@@ -1,0 +1,5 @@
+exclude:
+  - snake-io-multiplayer/client/node_modules
+  - snake-io-multiplayer/client
+  - snake-io-multiplayer/server
+  - node_modules
