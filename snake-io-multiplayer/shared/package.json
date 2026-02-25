@@ -1,0 +1,7 @@
+{
+  "name": "snake-io-shared",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./types.js",
+  "types": "./types.ts"
+}

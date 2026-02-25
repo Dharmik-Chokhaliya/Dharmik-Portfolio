@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Dharmik's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bottom-navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-icon">🚀</span>
+          <span class="badge-text">Portfolio Showcase</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="title-main">My Creative</span>
+          <span class="title-accent">Projects</span>
+        </h1>
+        <p class="hero-description">
+          Discover my journey through code, creativity, and innovation. Each project represents a unique challenge solved with modern technologies and thoughtful design.
+        </p>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-elements">
+          <div class="floating-element element-1"></div>
+          <div class="floating-element element-2"></div>
+          <div class="floating-element element-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-grid-section">
+      <div class="container">
+        <div class="projects-grid">
+          <!-- Project Card 1 -->
+          <article class="project-card modern-card clickable-card" data-category="productivity" data-href="ToDoList.html">
+            <div class="card-header">
+              <div class="project-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="project-status">
+                <span class="status-badge live">Live</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="project-title">Smart To-Do List</h3>
+              <p class="project-description">
+                A feature-rich task management application with intuitive design, real-time updates, and smart categorization.
+              </p>
+              <div class="tech-stack">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">HTML5</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://dharmik200817.github.io/To-Do-List/" target="_blank" class="btn-primary" onclick="event.stopPropagation();">
+                <span>View Project</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card modern-card clickable-card" data-category="simulation" data-href="atm.html">
+            <div class="card-header">
+              <div class="project-icon">
+                <i class="fas fa-university"></i>
+              </div>
+              <div class="project-status">
+                <span class="status-badge live">Live</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="project-title">ATM Simulator</h3>
+              <p class="project-description">
+                A realistic banking simulation with secure authentication, transaction history, and modern banking features.
+              </p>
+              <div class="tech-stack">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Banking Logic</span>
+                <span class="tech-tag">Security</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="atm.html" target="_blank" class="btn-primary" onclick="event.stopPropagation();">
+                <span>View Project</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card modern-card clickable-card" data-category="game" data-href="2048-game.html">
+            <div class="card-header">
+              <div class="project-icon">
+                <i class="fas fa-th"></i>
+              </div>
+              <div class="project-status">
+                <span class="status-badge live">Live</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="project-title">2048 Game</h3>
+              <p class="project-description">
+                Classic 2048 puzzle game with smooth animations, elegant design, and addictive gameplay mechanics.
+              </p>
+              <div class="tech-stack">
+                <span class="tech-tag">Puzzle Game</span>
+                <span class="tech-tag">Interactive</span>
+                <span class="tech-tag">Strategy</span>
+              </div>
+            </div>
+            <div class="card-footer">
+                <a href="2048-game.html" target="_blank" class="btn-primary" onclick="event.stopPropagation();">
+                <span>Play Game</span>
+                <i class="fas fa-gamepad"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project Card 4 -->
+          <article class="project-card modern-card clickable-card" data-category="showcase" data-href="Collage.html">
+            <div class="card-header">
+              <div class="project-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <div class="project-status">
+                <span class="status-badge live">Live</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="project-title">BMW Showcase</h3>
+              <p class="project-description">
+                Premium automotive showcase featuring immersive visuals, interactive elements, and luxury brand aesthetics.
+              </p>
+              <div class="tech-stack">
+                <span class="tech-tag">Video Integration</span>
+                <span class="tech-tag">Responsive</span>
+                <span class="tech-tag">Premium UI</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="Collage.html" target="_blank" class="btn-primary" onclick="event.stopPropagation();">
+                <span>View Project</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-navbar">
+        <div class="bottom-navbar-container">
+            <a href="index.html" class="bottom-nav-item" data-page="home">
+                <span class="bottom-nav-text">Home</span>
+            </a>
+            <a href="index.html#about" class="bottom-nav-item" data-page="about">
+                <span class="bottom-nav-text">About Me</span>
+            </a>
+
+            <a href="index.html#skills" class="bottom-nav-item" data-page="skills">
+                <span class="bottom-nav-text">My Skills</span>
+            </a>
+            <a href="projects.html" class="bottom-nav-item active" data-page="projects">
+                <span class="bottom-nav-text">Projects</span>
+            </a>
+        </div>
+    </div>
+
+<script>
+// Bottom navbar functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const navItems = document.querySelectorAll('.bottom-nav-item');
+    
+    // Set active item based on current page/section
+    function setActiveItem() {
+        const currentPath = window.location.pathname;
+        
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            const href = item.getAttribute('href');
+            
+            if (currentPath.includes('projects.html') && href === 'projects.html') {
+                item.classList.add('active');
+            }
+        });
+    }
+    
+    // Add click event listeners
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            const href = item.getAttribute('href');
+            
+            // Handle navigation
+            if (href.startsWith('index.html')) {
+                // Check if it's a section link
+                if (href.includes('#')) {
+                    // Navigate to index page with section
+                    window.location.href = href;
+                } else {
+                    // Navigate to index page
+                    window.location.href = 'index.html';
+                }
+            } else if (href === 'projects.html') {
+                // Already on projects page, just update active state
+                navItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+            } else {
+                // Navigate to other pages
+                window.location.href = href;
+            }
+        });
+    });
+    
+    // Set initial active item
+    setActiveItem();
+});
+
+// Make project cards clickable
+document.addEventListener("DOMContentLoaded", () => {
+    const clickableCards = document.querySelectorAll('.clickable-card');
+    
+    clickableCards.forEach(card => {
+        // Add pointer cursor style
+        card.style.cursor = 'pointer';
+        
+        card.addEventListener('click', (e) => {
+            // Don't trigger if clicking on the button or link
+            if (e.target.closest('.btn-primary')) {
+                return;
+            }
+            
+            const href = card.getAttribute('data-href');
+            if (href) {
+                window.open(href, '_blank');
+            }
+        });
+    });
+});
+</script>
+    <script src="bottom-navbar.js"></script>
+  </body>
+</html>

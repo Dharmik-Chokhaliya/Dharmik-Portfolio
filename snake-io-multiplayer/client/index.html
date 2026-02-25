@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a1a2e">
+  <meta name="description" content="Snake.io - Multiplayer snake game. Eat, grow, survive!">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <title>Snake.io Multiplayer</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Game Canvas -->
+  <canvas id="gameCanvas"></canvas>
+  
+  <!-- Menu Screen -->
+  <div id="menuScreen" class="screen">
+    <div class="menu-container">
+      <h1 class="game-title">🐍 Snake.io</h1>
+      <p class="game-subtitle">Multiplayer Arena</p>
+      <input 
+        type="text" 
+        id="playerNameInput" 
+        placeholder="Enter your name..." 
+        maxlength="15"
+        autocomplete="off"
+      >
+      
+      <!-- Skin Selector -->
+      <div class="skin-selector">
+        <p class="skin-label">Choose Your Skin</p>
+        
+        <!-- Color Selection -->
+        <div class="color-picker" id="colorPicker">
+          <!-- Colors will be injected by JS -->
+        </div>
+        
+        <!-- Pattern Selection -->
+        <div class="pattern-picker" id="patternPicker">
+          <!-- Patterns will be injected by JS -->
+        </div>
+        
+        <!-- Skin Preview -->
+        <canvas id="skinPreview" width="200" height="60"></canvas>
+      </div>
+      
+      <button id="playButton" class="btn-play">
+        <span>▶</span> PLAY
+      </button>
+      
+      <!-- Share Link Section -->
+      <div class="share-section">
+        <p class="share-label">Invite Friends</p>
+        <div class="share-input-group">
+          <input type="text" id="shareLinkInput" readonly class="share-link-input">
+          <button id="copyLinkBtn" class="copy-btn">Copy</button>
+        </div>
+      </div>
+      
+      <div class="controls-hint">
+        <p>🖱️ Mouse to move | Space to boost</p>
+        <p>📱 Touch & drag on mobile</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Death Screen -->
+  <div id="deathScreen" class="screen hidden">
+    <div class="death-container">
+      <h2 class="death-title">💀 Game Over</h2>
+      <div class="final-score">
+        <span>Your Score</span>
+        <span id="finalScore">0</span>
+      </div>
+      <div class="final-length">
+        <span>Length</span>
+        <span id="finalLength">0</span>
+      </div>
+      <button id="playAgainButton" class="btn-play">
+        <span>🔄</span> Play Again
+      </button>
+    </div>
+  </div>
+  
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <!-- Leaderboard -->
+    <div id="leaderboard">
+      <div class="leaderboard-header">
+        <h3>🏆 Leaderboard</h3>
+        <button id="leaderboardToggle" class="toggle-btn">▼</button>
+      </div>
+      <ol id="leaderboardList"></ol>
+    </div>
+    
+    <!-- Player Stats -->
+    <div id="playerStats">
+      <div class="stat">
+        <span class="stat-label">Score</span>
+        <span id="currentScore" class="stat-value">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Length</span>
+        <span id="currentLength" class="stat-value">10</span>
+      </div>
+    </div>
+    
+    <!-- Power-up indicator -->
+    <div id="powerUpIndicator" class="hidden">
+      <span id="powerUpIcon">🛡️</span>
+      <span id="powerUpTimer">5s</span>
+    </div>
+    
+    <!-- Minimap -->
+    <canvas id="minimap"></canvas>
+    
+    <!-- Fullscreen button -->
+    <button id="fullscreenBtn" class="icon-btn">⛶</button>
+  </div>
+  
+  <!-- Mobile Controls -->
+  <div id="mobileControls" class="hidden">
+    <!-- Joystick removed, entire screen is touch area now -->
+    <button id="boostButton" class="boost-btn">🚀</button>
+  </div>
+  
+  <!-- Loading overlay -->
+  <div id="loadingOverlay" class="hidden">
+    <div class="loading-container">
+      <div class="loader"></div>
+      <p id="loadingText">Connecting to server...</p>
+      <p class="loading-hint">Starting server, please wait...</p>
+    </div>
+  </div>
+  
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Project | Dharmik's Portfolio</title>
+    <link rel="stylesheet" href="atm.css">
+    <link rel="stylesheet" href="bottom-navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="atm-container">
+        <div class="atm-screen">
+            <div id="atm-message">Welcome! Please enter your PIN.</div>
+        </div>
+        <form id="pin-form">
+            <input type="password" id="pin-input" maxlength="4" placeholder="Enter PIN" required>
+            <button type="submit">Enter</button>
+        </form>
+        <div id="funny-pin-message" style="color:#b74b4b; text-align:center; margin-bottom:1rem; font-size:1.1rem;">
+            🤖 Don't worry, I won't tell anyone your PIN... or will I? 😏
+        </div>
+        <div id="atm-actions" style="display:none;">
+            <button onclick="showBalance()">Check Balance</button>
+            <div class="funny-service-message" id="funny-balance" style="display:none; color:#b74b4b; text-align:center; margin:0.5rem 0; font-size:1.1rem;">💸 Don't worry, your money is safe... for now!</div>
+            <button onclick="showWithdraw()">Withdraw</button>
+            <div class="funny-service-message" id="funny-withdraw" style="display:none; color:#b74b4b; text-align:center; margin:0.5rem 0; font-size:1.1rem;">🏧 Please don't try to withdraw more than you have. The ATM gets nervous!</div>
+            <button onclick="showDeposit()">Deposit</button>
+            <div class="funny-service-message" id="funny-deposit" style="display:none; color:#b74b4b; text-align:center; margin:0.5rem 0; font-size:1.1rem;">💰 Deposit all your money here. I promise not to spend it... much.</div>
+            <button onclick="logout()">Logout</button>
+            <div class="funny-service-message" id="funny-logout" style="display:none; color:#b74b4b; text-align:center; margin:0.5rem 0; font-size:1.1rem;">👋 Leaving so soon? The ATM will miss you!</div>
+        </div>
+        <form id="withdraw-form" style="display:none;">
+            <input type="number" id="withdraw-amount" min="1" placeholder="Amount">
+            <button type="submit">Withdraw</button>
+        </form>
+        <form id="deposit-form" style="display:none;">
+            <input type="number" id="deposit-amount" min="1" placeholder="Amount">
+            <button type="submit">Deposit</button>
+        </form>
+    </section>
+    <script>
+        let balance = 1000;
+        const correctPin = "1234";
+        const atmMessage = document.getElementById('atm-message');
+        const pinForm = document.getElementById('pin-form');
+        const pinInput = document.getElementById('pin-input');
+        const atmActions = document.getElementById('atm-actions');
+        const withdrawForm = document.getElementById('withdraw-form');
+        const depositForm = document.getElementById('deposit-form');
+
+        const funnyMessages = [
+            "💸 Don't worry, your money is safe... for now!",
+            "🏧 Please don't try to withdraw more than you have. The ATM gets nervous!",
+            "💰 Deposit all your money here. I promise not to spend it... much.",
+            "👋 Leaving so soon? The ATM will miss you!",
+            "🤖 I am not judging your balance. Or am I?",
+            "🤑 If only I could earn interest on your deposits!",
+            "😏 PIN accepted. I won't tell anyone... probably.",
+            "💳 Your card is my favorite!",
+            "😎 This ATM never sleeps. Unlike you!",
+            "😂 I wish I had a tip jar!",
+            "🤫 I know your secrets... just kidding!",
+            "🎉 Transaction complete! Time to celebrate!",
+            "🤔 Did you just try to withdraw a million?",
+            "😅 Don't worry, I won't laugh at your balance.",
+            "🕵️‍♂️ I see everything, but I say nothing.",
+            "🍕 Use your savings for pizza!",
+            "🎲 Feeling lucky today?",
+            "🦾 I am powered by your transactions!",
+            "🧊 Stay cool, your money is safe.",
+            "🦉 Wise choice!",
+            "🐱 I wish I had a cat picture to show you.",
+            "🌞 Have a bright day!",
+            "🌚 Don't use me at midnight. I get sleepy.",
+            "🎵 If only I could play music for you!",
+            "🧠 I remember everything... or do I?",
+            "🦄 Magical things happen here!",
+            "🍀 May your balance always be lucky.",
+            "🚀 Transaction speed: faster than light!",
+            "🧩 You solved the ATM puzzle!",
+            "🎁 Surprise! No hidden fees today!"
+        ];
+
+        function getRandomFunnyMessage() {
+            return funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+        }
+
+        function formatINR(num) {
+            return num.toLocaleString('en-IN');
+        }
+
+        pinForm.onsubmit = function(e) {
+            e.preventDefault();
+            if (pinInput.value === correctPin) {
+                atmMessage.innerHTML = "PIN accepted. Choose an action.<br>" + getRandomFunnyMessage();
+                pinForm.style.display = "none";
+                atmActions.style.display = "flex";
+                document.getElementById('funny-pin-message').style.display = 'none';
+            } else {
+                atmMessage.textContent = "Incorrect PIN. Try again.";
+                pinInput.value = "";
+            }
+        };
+
+        function showBalance() {
+            atmMessage.innerHTML = "Your balance is ₹" + formatINR(balance) + "<br>" + getRandomFunnyMessage();
+            withdrawForm.style.display = "none";
+            depositForm.style.display = "none";
+        }
+
+        function showWithdraw() {
+            atmMessage.innerHTML = "Enter amount to withdraw:<br>" + getRandomFunnyMessage();
+            withdrawForm.style.display = "flex";
+            depositForm.style.display = "none";
+        }
+
+        function showDeposit() {
+            atmMessage.innerHTML = "Enter amount to deposit:<br>" + getRandomFunnyMessage();
+            depositForm.style.display = "flex";
+            withdrawForm.style.display = "none";
+        }
+
+        withdrawForm.onsubmit = function(e) {
+            e.preventDefault();
+            const amount = parseInt(document.getElementById('withdraw-amount').value, 10);
+            if (amount > 0 && amount <= balance) {
+                balance -= amount;
+                atmMessage.innerHTML = "Withdrawn ₹" + formatINR(amount) + ". New balance: ₹" + formatINR(balance) + "<br>" + getRandomFunnyMessage();
+            } else {
+                atmMessage.innerHTML = "Invalid amount or insufficient funds.<br>" + getRandomFunnyMessage();
+            }
+            withdrawForm.style.display = "none";
+        };
+
+        depositForm.onsubmit = function(e) {
+            e.preventDefault();
+            const amount = parseInt(document.getElementById('deposit-amount').value, 10);
+            if (amount > 0) {
+                balance += amount;
+                atmMessage.innerHTML = "Deposited ₹" + formatINR(amount) + ". New balance: ₹" + formatINR(balance) + "<br>" + getRandomFunnyMessage();
+            } else {
+                atmMessage.innerHTML = "Enter a valid amount.<br>" + getRandomFunnyMessage();
+            }
+            depositForm.style.display = "none";
+        };
+
+        function logout() {
+            atmMessage.innerHTML = "Logged out. Please enter your PIN.<br>" + getRandomFunnyMessage();
+            pinForm.style.display = "flex";
+            atmActions.style.display = "none";
+            withdrawForm.style.display = "none";
+            depositForm.style.display = "none";
+            pinInput.value = "";
+            document.getElementById('funny-pin-message').style.display = 'block';
+        }
+    </script>
+    <script src="bottom-navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "snake-io-multiplayer-root",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd server && npm install --include=dev && npx tsx src/index.ts",
+    "build": "echo 'Building...'",
+    "postinstall": "cd server && npm install"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
