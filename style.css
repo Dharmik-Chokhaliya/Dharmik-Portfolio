@@ -34,13 +34,15 @@ body{
 /* Background Video */
 .background-video {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
     z-index: -1;
     opacity: 0.9;
+    pointer-events: none;
+    border: none;
+    overflow: hidden;
 }
 
 /* ===== Navbar ===== */
