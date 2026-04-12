@@ -1,0 +1,406 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Inter', 'Unbounded', 'Arial', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(183, 75, 75, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 2.8rem;
+    color: #b74b4b;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #b74b4b 0%, #d65555 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(183, 75, 75, 0.3);
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.atm-container {
+    background: linear-gradient(135deg, rgba(24, 24, 24, 0.95) 0%, rgba(32, 32, 32, 0.9) 100%);
+    border-radius: 2rem;
+    border: 1px solid rgba(183, 75, 75, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 8px 24px rgba(183, 75, 75, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    padding: 4rem 4rem 3rem;
+    width: 85vw;
+    max-width: 650px;
+    min-height: 250px;
+    margin: 4vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: atmFadeIn 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    z-index: 1;
+}
+
+.atm-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(183, 75, 75, 0.05) 0%, transparent 50%);
+    border-radius: 2rem;
+    pointer-events: none;
+}
+
+@keyframes atmFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.atm-screen {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-radius: 1.2rem;
+    border: 2px solid rgba(183, 75, 75, 0.3);
+    padding: 3rem 2.5rem;
+    width: 100%;
+    min-height: 8rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #b74b4b;
+    text-align: center;
+    animation: screenPop 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 
+        0 8px 32px rgba(183, 75, 75, 0.2),
+        inset 0 1px 0 rgba(183, 75, 75, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.atm-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(183, 75, 75, 0.1), transparent);
+    animation: screenGlow 3s ease-in-out infinite;
+}
+
+@keyframes screenGlow {
+    0%, 100% { left: -100%; }
+    50% { left: 100%; }
+}
+
+@keyframes screenPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+form {
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    animation: fadeUp 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+input[type="password"],
+input[type="number"] {
+    padding: 1.2rem 1.5rem;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, rgba(34, 34, 34, 0.8) 0%, rgba(42, 42, 42, 0.9) 100%);
+    color: #fff;
+    border: 2px solid rgba(183, 75, 75, 0.3);
+    width: 60%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+input[type="password"]:focus,
+input[type="number"]:focus {
+    border-color: #b74b4b;
+    box-shadow: 
+        0 0 0 3px rgba(183, 75, 75, 0.2),
+        0 4px 15px rgba(183, 75, 75, 0.3);
+    transform: translateY(-2px);
+}
+
+input[type="password"]::placeholder,
+input[type="number"]::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+    padding: 1.4rem 2.8rem;
+    border-radius: 0.8rem;
+    background: linear-gradient(135deg, #b74b4b 0%, #a13a3a 100%);
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 0.5rem 0;
+    border: 2px solid transparent;
+    box-shadow: 
+        0 4px 15px rgba(183, 75, 75, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+    color: #b74b4b;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 8px 25px rgba(183, 75, 75, 0.4),
+        0 4px 15px rgba(0, 0, 0, 0.3);
+    border-color: rgba(183, 75, 75, 0.3);
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:active {
+    transform: translateY(-1px) scale(1.01);
+    transition: all 0.1s ease;
+}
+
+#atm-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.safety-tips {
+    background: linear-gradient(135deg, rgba(35, 35, 35, 0.9) 0%, rgba(45, 45, 45, 0.8) 100%);
+    color: #b74b4b;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(183, 75, 75, 0.2);
+    padding: 2rem 2.5rem;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 4px 15px rgba(183, 75, 75, 0.1);
+    width: 100%;
+    max-width: 500px;
+    animation: fadeUp 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(15px);
+    position: relative;
+}
+
+.safety-tips::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(183, 75, 75, 0.03) 0%, transparent 50%);
+    border-radius: 1.2rem;
+    pointer-events: none;
+}
+
+.safety-tips h3 {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.safety-tips ul {
+    margin: 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.safety-tips li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+}
+
+.safety-tips li::marker {
+    color: #b74b4b;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .atm-container {
+        width: 95vw;
+        padding: 3rem 2.5rem;
+        margin: 2vh auto;
+    }
+    
+    .logo {
+        font-size: 2.4rem;
+    }
+    
+    h1 {
+        font-size: 2.4rem;
+    }
+    
+    .atm-screen {
+        font-size: 1.8rem;
+        padding: 2.5rem 2rem;
+        min-height: 7rem;
+    }
+    
+    form {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    input[type="password"],
+    input[type="number"] {
+        width: 100%;
+        font-size: 1.4rem;
+    }
+    
+    button {
+        font-size: 1.5rem;
+        padding: 1.3rem 2.5rem;
+    }
+    
+    .safety-tips {
+        font-size: 1.2rem;
+        padding: 1.8rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .atm-container {
+        width: 98vw;
+        padding: 2.5rem 2rem;
+    }
+    
+    .logo {
+        font-size: 2.2rem;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .atm-screen {
+        font-size: 1.6rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    input[type="password"],
+    input[type="number"] {
+        padding: 1rem 1.2rem;
+        font-size: 1.3rem;
+    }
+    
+    button {
+        font-size: 1.4rem;
+        padding: 1.2rem 2rem;
+    }
+    
+    .safety-tips {
+        font-size: 1.1rem;
+        padding: 1.5rem 1.8rem;
+    }
+}
+
