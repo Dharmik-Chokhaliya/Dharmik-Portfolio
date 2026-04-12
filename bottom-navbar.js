@@ -16,7 +16,6 @@ class BottomNavbar {
       if (hash === '#skills') return 'skills';
       return 'home';
     }
-    if (page === 'projects.html') return 'projects';
     
     return 'home'; // default
   }
@@ -31,9 +30,6 @@ class BottomNavbar {
         </a>
         <a href="index.html#about" class="bottom-nav-item" data-page="about">
           <span class="bottom-nav-text">About Me</span>
-        </a>
-        <a href="projects.html" class="bottom-nav-item" data-page="projects">
-          <span class="bottom-nav-text">Projects</span>
         </a>
         <a href="index.html#skills" class="bottom-nav-item" data-page="skills">
           <span class="bottom-nav-text">My Skills</span>
