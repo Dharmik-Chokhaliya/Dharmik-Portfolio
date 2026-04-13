@@ -215,9 +215,11 @@ section {
 /* ===== Projects Section ===== */
 .projects {
     min-height: auto;
-    padding: 100px 0 40px;
-    max-width: 100%;
-    margin: 0 auto;
+    padding: 100px 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .projects h2 {
@@ -230,8 +232,10 @@ section {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+    gap: 25px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* Glass Card Effect */
@@ -251,8 +255,8 @@ section {
 }
 
 .project-card {
-    padding: 30px;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 16px;
     position: relative;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px) saturate(1.5);
@@ -262,10 +266,11 @@ section {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     overflow: hidden;
     box-shadow: 
         0 4px 24px rgba(0, 0, 0, 0.2);
+    height: 180px;
 }
 
 .project-card::before {
@@ -296,31 +301,31 @@ section {
 }
 
 .project-card-header {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 600;
     color: rgb(255, 255, 255);
 }
 
 .project-card p {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 1.4rem;
-    line-height: 1.6;
+    font-size: 1.3rem;
+    line-height: 1.4;
     flex: 1;
 }
 
 .project-tags {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
 .tag {
     display: inline-block;
-    padding: 6px 12px;
+    padding: 4px 10px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    font-size: 1.2rem;
+    border-radius: 16px;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
     backdrop-filter: blur(10px);
