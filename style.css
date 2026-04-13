@@ -35,10 +35,10 @@ body{
 /* Background Video */
 .background-video {
     position: fixed;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
     z-index: -1;
     opacity: 0.9;
     pointer-events: none;
@@ -67,14 +67,11 @@ body{
     -webkit-backdrop-filter: blur(16px) brightness(1.1);
     
     /* Enhanced border for lens effect */
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
-    border-top: 1.5px solid rgba(255, 255, 255, 0.4);
-    border-left: 1.5px solid rgba(255, 255, 255, 0.3);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
     
     /* Deep shadow for depth */
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 1px rgba(255, 255, 255, 0.2),
         0 0 20px rgba(100, 200, 255, 0.1);
     
     transition: all 0.3s ease;
@@ -82,10 +79,9 @@ body{
 
 .navbar:hover {
     background: rgba(15, 15, 20, 0.45);
-    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
     box-shadow: 
         0 12px 40px rgba(0, 0, 0, 0.4),
-        inset 0 1px 1px rgba(255, 255, 255, 0.3),
         0 0 30px rgba(100, 200, 255, 0.15);
 }
 
@@ -147,7 +143,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px 40px 40px;
+    padding: 100px 0 40px;
 }
 
 .hero-content {
@@ -166,8 +162,6 @@ section {
     
     box-shadow: 
         0 20px 60px rgba(0, 0, 0, 0.3),
-        inset 0 1px 2px rgba(255, 255, 255, 0.2),
-        inset 0 -1px 2px rgba(100, 200, 255, 0.1),
         0 0 60px rgba(100, 200, 255, 0.06),
         0 0 100px rgba(255, 100, 150, 0.03);
 }
@@ -221,8 +215,8 @@ section {
 /* ===== Projects Section ===== */
 .projects {
     min-height: auto;
-    padding: 100px 40px 40px;
-    max-width: 1000px;
+    padding: 100px 0 40px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -271,8 +265,7 @@ section {
     gap: 15px;
     overflow: hidden;
     box-shadow: 
-        0 4px 24px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
 .project-card::before {
@@ -298,8 +291,7 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 
         0 12px 40px rgba(0, 0, 0, 0.4),
-        0 0 80px rgba(255, 255, 255, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        0 0 80px rgba(255, 255, 255, 0.08);
     transform: translateY(-8px) scale(1.02);
 }
 
@@ -337,7 +329,7 @@ section {
 /* ===== NEW About Section - Bento Grid ===== */
 .about-new {
     min-height: auto;
-    padding: 80px 40px 100px;
+    padding: 80px 0 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -825,7 +817,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 40px;
+    padding: 100px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -849,8 +841,6 @@ section {
     
     box-shadow: 
         0 25px 70px rgba(0, 0, 0, 0.25),
-        inset 0 1px 2px rgba(255, 255, 255, 0.2),
-        inset 0 -1px 2px rgba(100, 200, 255, 0.1),
         0 0 80px rgba(100, 200, 255, 0.08),
         0 0 120px rgba(255, 100, 150, 0.05);
 }
@@ -986,8 +976,7 @@ section {
     border-color: rgba(100, 200, 255, 1);
     box-shadow: 
         0 0 30px rgba(100, 200, 255, 0.4),
-        0 0 60px rgba(100, 200, 255, 0.2),
-        inset 0 0 20px rgba(100, 200, 255, 0.1);
+        0 0 60px rgba(100, 200, 255, 0.2);
     transform: translateY(-3px) scale(1.02);
 }
 
@@ -1052,7 +1041,7 @@ section {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 40px;
+    padding: 40px 0;
 }
 
 .back-button {
@@ -1308,8 +1297,7 @@ section {
     border-color: rgba(183, 75, 75, 0.6);
     box-shadow: 
         0 0 0 3px rgba(183, 75, 75, 0.3),
-        0 16px 48px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 16px 48px rgba(0, 0, 0, 0.4);
 }
 
 .project-card:hover {
@@ -1317,9 +1305,7 @@ section {
     border-color: rgba(183, 75, 75, 0.4);
     box-shadow: 
         0 20px 60px rgba(0, 0, 0, 0.4),
-        0 8px 24px rgba(183, 75, 75, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    transform: translateY(-8px) scale(1.02);
+        0 8px 24px rgba(183, 75, 75, 0.2);
     color: #fff;
     text-decoration: none;
 }
